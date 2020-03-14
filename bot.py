@@ -22,8 +22,7 @@ async def q(ctx, *, question):
         result = []
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = CHROME_DRIVER_PATH
-        chrome_driver = path
+        chrome_driver = CHROME_DRIVER_PATH
         driver = webdriver.Chrome(options=chrome_options, executable_path=chrome_driver)
         driver.get("http://www.google.com"); 
         element = driver.find_element_by_name("q")

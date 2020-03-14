@@ -1,4 +1,5 @@
 import discord
+from secrets import DISCORD_KEY
 from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -57,4 +58,5 @@ async def close(ctx):
 	await ctx.send("Closing")
 	await bot.logout()
 
-bot.run('Njg4MjI1MjMxNzI2NTc1Njc1.Xmxztw.nCeF8A5j__tLXnkWcFjwdUJOnaA')
+key = DISCORD_KEY
+bot.run(key)

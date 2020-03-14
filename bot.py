@@ -1,5 +1,5 @@
 import discord
-from secrets import DISCORD_KEY
+from secrets import DISCORD_KEY, CHROME_DRIVER_PATH
 from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -22,7 +22,8 @@ async def q(ctx, *, question):
         result = []
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        chrome_driver = r'C:/Users/Hunte/OneDrive/Documents/Discord StackOverflow Bot/ChromeDriver/chromedriver.exe'
+        path = CHROME_DRIVER_PATH
+        chrome_driver = path
         driver = webdriver.Chrome(options=chrome_options, executable_path=chrome_driver)
         driver.get("http://www.google.com"); 
         element = driver.find_element_by_name("q")
